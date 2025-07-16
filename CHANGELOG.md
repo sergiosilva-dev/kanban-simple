@@ -22,6 +22,9 @@ Este documento sigue el formato de [Keep a Changelog](https://keepachangelog.com
 - Listener `DOMContentLoaded` agregado para preparación de funcionalidades JS.
 - Archivo `site.webmanifest` con íconos y configuración para PWA básica.
 - Íconos favicon en múltiples tamaños para navegadores y dispositivos móviles.
+- Lógica inicial en `main.js` para arrastrar y soltar tareas entre columnas.
+- Listener `dragstart`, `dragend`, `dragover` y `drop` correctamente implementados.
+- Estilos básicos añadidos para `.task` y estado `.dragging`.
 
 ### 📝 Actualizado
 
