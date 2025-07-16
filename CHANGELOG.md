@@ -14,6 +14,7 @@ Este documento sigue el formato de [Keep a Changelog](https://keepachangelog.com
 - Estructura base del proyecto (HTML, CSS, JS).
 - Archivo `LICENSE` con licencia MIT personalizada.
 - Archivo `README.md` con descripción, uso y datos del autor.
+- Archivo `.gitignore` para excluir configuraciones locales, temporales y del sistema.
 
 ### 📝 Actualizado
 

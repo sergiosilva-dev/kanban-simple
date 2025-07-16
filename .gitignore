@@ -1,0 +1,16 @@
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Archivos temporales de VS Code
+.vscode/
+
+# Archivos del sistema operativo
+desktop.ini
+
+# Archivos de Live Server o similares (en caso de usar extensiones que generen)
+*.log
+*.tmp
+
+# Node (por si en el futuro agregas algo con npm)
+node_modules/
