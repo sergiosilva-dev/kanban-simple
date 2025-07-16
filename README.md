@@ -26,7 +26,7 @@ Este proyecto hace parte del portafolio de aprendizaje de [Up Develop](https://g
 
 ## 📁 Estructura del proyecto
 
-````plaintext
+```plaintext
 kanban-simple/
 │
 ├── index.html
@@ -39,17 +39,17 @@ kanban-simple/
 │   └── img/
 ├── LICENSE
 └── README.md
-````
+```
 
 ## 🔧 Cómo usar este proyecto
 
-1. Clona el repositorio:
+Clona el repositorio:
 
 ```bash
 git clone https://github.com/sergiosilva-dev/kanban-simple.git
-````
+```
 
-2. Abre `index.html` en tu navegador o usa Live Server desde VS Code.
+Abre `index.html` en tu navegador o usa Live Server desde VS Code.
 
 ---
 
