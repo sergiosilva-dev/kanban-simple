@@ -25,6 +25,10 @@ Este documento sigue el formato de [Keep a Changelog](https://keepachangelog.com
 - Lógica inicial en `main.js` para arrastrar y soltar tareas entre columnas.
 - Listener `dragstart`, `dragend`, `dragover` y `drop` correctamente implementados.
 - Estilos básicos añadidos para `.task` y estado `.dragging`.
+- Formulario con input y botón para crear nuevas tareas.
+- Lógica en `main.js` para insertar tareas dinámicamente en la columna "Por hacer".
+- Eventos drag and drop aplicados automáticamente a nuevas tareas.
+- Estilos visuales para el formulario en `style.css`.
 
 ### 📝 Actualizado
 

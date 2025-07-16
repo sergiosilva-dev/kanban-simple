@@ -5,6 +5,7 @@
   Este archivo define el layout, columnas y tareas del tablero Kanban.
   Actualizaciones:
   - [2025-07-16] Estilos base para estructura del tablero y columnas.
+  - [2025-07-16] Se agrega formulario de tareas dinámicas
 */
 
 /* Reset básico */
@@ -15,39 +16,42 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
   background-color: #1e1e1e;
-  color: #f5f5f5;
-  min-height: 100vh;
+  color: white;
   display: flex;
-  align-items: center;
   justify-content: center;
+}
+
+/* Contenedor principal del tablero Kanban */
+.kanban-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
   padding: 2rem;
 }
 
 /* Contenedor principal del tablero */
 .kanban-board {
   display: flex;
-  gap: 1.5rem;
-  width: 100%;
-  max-width: 1200px;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* Columnas */
 .kanban-column {
   background-color: #2c2c2c;
-  border-radius: 8px;
   padding: 1rem;
-  width: 100%;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  border-radius: 8px;
+  width: 300px;
+  min-height: 300px;
 }
 
 .kanban-column h2 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  color: #ffffff;
+  margin-top: 0;
 }
 
 /* Contenedor de tareas dentro de cada columna */
@@ -57,4 +61,37 @@ body {
   gap: 0.75rem;
 }
 
-/* Comentario: Los estilos para las tarjetas de tarea se agregarán más adelante */
+/* Contenedor del formulario */
+.task-form {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  max-width: 100%;
+  justify-content: center;
+}
+
+/* Estilo del input */
+.task-form input {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+/* Estilo del botón */
+.task-form button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #007acc;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.task-form button:hover {
+  background-color: #005f99;
+}

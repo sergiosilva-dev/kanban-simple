@@ -6,6 +6,7 @@
   Actualizaciones:
   - [2025-07-16] Creación del archivo y estructura inicial.
   - [2025-07-16] Se agregaron los favicons, manifest y enlaces a íconos para PWA.
+  - [2025-07-16] Se agrega tareas dinámicamente desde un input
 -->
 
 <!DOCTYPE html>
@@ -30,31 +31,38 @@
 </head>
 
 <body>
-
-    <!-- Contenedor principal del tablero -->
-    <main class="kanban-board">
-        <!-- Columnas del tablero -->
-        <section class="kanban-column" id="todo">
-            <h2>Por hacer</h2>
-            <div class="kanban-tasks" id="todo-tasks">
-                <!-- Tareas pendientes aquí -->
-            </div>
+    <div class="kanban-container">
+        <!-- Formulario para agregar tareas -->
+        <section class="task-form">
+            <input type="text" id="new-task-input" placeholder="Escribe una nueva tarea..." />
+            <button id="add-task-btn">Agregar</button>
         </section>
 
-        <section class="kanban-column" id="in-progress">
-            <h2>En progreso</h2>
-            <div class="kanban-tasks" id="in-progress-tasks">
-                <!-- Tareas en curso aquí -->
-            </div>
-        </section>
+        <!-- Contenedor principal del tablero -->
+        <main class="kanban-board">
+            <!-- Columnas del tablero -->
+            <section class="kanban-column" id="todo">
+                <h2>Por hacer</h2>
+                <div class="kanban-tasks" id="todo-tasks">
+                    <!-- Tareas pendientes aquí -->
+                </div>
+            </section>
 
-        <section class="kanban-column" id="done">
-            <h2>Completado</h2>
-            <div class="kanban-tasks" id="done-tasks">
-                <!-- Tareas terminadas aquí -->
-            </div>
-        </section>
-    </main>
+            <section class="kanban-column" id="in-progress">
+                <h2>En progreso</h2>
+                <div class="kanban-tasks" id="in-progress-tasks">
+                    <!-- Tareas en curso aquí -->
+                </div>
+            </section>
+
+            <section class="kanban-column" id="done">
+                <h2>Completado</h2>
+                <div class="kanban-tasks" id="done-tasks">
+                    <!-- Tareas terminadas aquí -->
+                </div>
+            </section>
+        </main>
+    </div>
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
