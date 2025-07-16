@@ -20,7 +20,11 @@ Este documento sigue el formato de [Keep a Changelog](https://keepachangelog.com
 - Comentarios documentados con autor, fecha y registro de actualizaciones.
 - Archivo `main.js` con estructura base para lógica de interacción drag and drop.
 - Listener `DOMContentLoaded` agregado para preparación de funcionalidades JS.
+- Archivo `site.webmanifest` con íconos y configuración para PWA básica.
+- Íconos favicon en múltiples tamaños para navegadores y dispositivos móviles.
 
 ### 📝 Actualizado
 
 - `README.md`: añadidas secciones de uso, autor y licencia.
+- `index.html`: se agregaron enlaces a favicons y manifest para compatibilidad con PWA.
+- Comentarios actualizados en la sección de documentación del archivo.
