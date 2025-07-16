@@ -16,6 +16,8 @@ Este documento sigue el formato de [Keep a Changelog](https://keepachangelog.com
 - Archivo `README.md` con descripción, uso y datos del autor.
 - Archivo `.gitignore` para excluir configuraciones locales, temporales y del sistema.
 - Archivo `index.html` con estructura base del tablero Kanban y comentarios documentados (autor, fecha, uso, futuras actualizaciones).
+- Archivo `style.css` con estilos base para la estructura visual del tablero Kanban, columnas y layout general.
+- Comentarios documentados con autor, fecha y registro de actualizaciones.
 
 ### 📝 Actualizado
 
