@@ -1,0 +1,59 @@
+<!--
+  Autor: Sergio Silva
+  Fecha de creación: 2025-07-16
+  Descripción: Archivo HTML principal del proyecto "kanban-simple".
+  Estructura de un tablero Kanban básico con columnas para organizar tareas.
+  Actualizaciones:
+  - [2025-07-16] Creación del archivo y estructura inicial.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Título de la página -->
+    <title>Tablero Kanban Simple</title>
+
+    <!-- Enlace a hoja de estilos -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Favicon (opcional) -->
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+
+    <!-- Contenedor principal del tablero -->
+    <main class="kanban-board">
+        <!-- Columnas del tablero -->
+        <section class="kanban-column" id="todo">
+            <h2>Por hacer</h2>
+            <div class="kanban-tasks" id="todo-tasks">
+                <!-- Tareas pendientes aquí -->
+            </div>
+        </section>
+
+        <section class="kanban-column" id="in-progress">
+            <h2>En progreso</h2>
+            <div class="kanban-tasks" id="in-progress-tasks">
+                <!-- Tareas en curso aquí -->
+            </div>
+        </section>
+
+        <section class="kanban-column" id="done">
+            <h2>Completado</h2>
+            <div class="kanban-tasks" id="done-tasks">
+                <!-- Tareas terminadas aquí -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

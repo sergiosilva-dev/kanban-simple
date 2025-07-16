@@ -15,6 +15,7 @@ Este documento sigue el formato de [Keep a Changelog](https://keepachangelog.com
 - Archivo `LICENSE` con licencia MIT personalizada.
 - Archivo `README.md` con descripción, uso y datos del autor.
 - Archivo `.gitignore` para excluir configuraciones locales, temporales y del sistema.
+- Archivo `index.html` con estructura base del tablero Kanban y comentarios documentados (autor, fecha, uso, futuras actualizaciones).
 
 ### 📝 Actualizado
 
