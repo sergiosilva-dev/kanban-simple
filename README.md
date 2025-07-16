@@ -39,6 +39,7 @@ kanban-simple/
 │   └── img/
 ├── LICENSE
 └── README.md
+````
 
 ## 🔧 Cómo usar este proyecto
 
@@ -57,7 +58,7 @@ git clone https://github.com/sergiosilva-dev/kanban-simple.git
 **Sergio Andres Silva Martinez**  
 Cofundador de [Up Develop](https://github.com/up-develop)
 
-🛠️ [GitHub] (https://github.com/sergiosilva-dev)
+🛠️ [GitHub](https://github.com/sergiosilva-dev)
 💼 [LinkedIn](https://linkedin.com/in/sergiosilva-dev)  
 🌐 [Página web](https://updevelop.com.co)
 
