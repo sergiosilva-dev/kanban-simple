@@ -29,6 +29,10 @@ Este documento sigue el formato de [Keep a Changelog](https://keepachangelog.com
 - Lógica en `main.js` para insertar tareas dinámicamente en la columna "Por hacer".
 - Eventos drag and drop aplicados automáticamente a nuevas tareas.
 - Estilos visuales para el formulario en `style.css`.
+- Lógica en `main.js` para persistir tareas usando `localStorage`.
+- Función `guardarTareas()` que guarda el estado del tablero automáticamente.
+- Función `cargarTareas()` que restaura tareas guardadas al cargar la app.
+- Función `crearTarea()` centralizada para tareas nuevas o recuperadas.
 
 ### 📝 Actualizado
 

@@ -7,6 +7,8 @@
   - [2025-07-16] Creación del archivo y estructura inicial.
   - [2025-07-16] Se agregaron los favicons, manifest y enlaces a íconos para PWA.
   - [2025-07-16] Se agrega tareas dinámicamente desde un input
+  - [2025-07-16] Mejora de identación, estructura visual y legibilidad
+  - [2025-07-16] Se añade soporte para guardar y recuperar tareas desde localStorage.
 -->
 
 <!DOCTYPE html>
@@ -24,47 +26,43 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- Favicon e íconos -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
 </head>
 
 <body>
     <div class="kanban-container">
-        <!-- Formulario para agregar tareas -->
+        <!-- Formulario de ingreso de tareas -->
         <section class="task-form">
-            <input type="text" id="new-task-input" placeholder="Escribe una nueva tarea..." />
-            <button id="add-task-btn">Agregar</button>
+            <input type="text" id="new-task-input" placeholder="Escribe una nueva tarea..." aria-label="Nueva tarea" />
+            <button id="add-task-btn" aria-label="Agregar tarea">Agregar</button>
         </section>
 
-        <!-- Contenedor principal del tablero -->
+        <!-- Tablero principal -->
         <main class="kanban-board">
-            <!-- Columnas del tablero -->
-            <section class="kanban-column" id="todo">
+            <!-- Columna: Por hacer -->
+            <section class="kanban-column">
                 <h2>Por hacer</h2>
-                <div class="kanban-tasks" id="todo-tasks">
-                    <!-- Tareas pendientes aquí -->
-                </div>
+                <div class="kanban-tasks" id="todo-tasks"></div>
             </section>
 
-            <section class="kanban-column" id="in-progress">
+            <!-- Columna: En progreso -->
+            <section class="kanban-column">
                 <h2>En progreso</h2>
-                <div class="kanban-tasks" id="in-progress-tasks">
-                    <!-- Tareas en curso aquí -->
-                </div>
+                <div class="kanban-tasks" id="in-progress-tasks"></div>
             </section>
 
-            <section class="kanban-column" id="done">
+            <!-- Columna: Completado -->
+            <section class="kanban-column">
                 <h2>Completado</h2>
-                <div class="kanban-tasks" id="done-tasks">
-                    <!-- Tareas terminadas aquí -->
-                </div>
+                <div class="kanban-tasks" id="done-tasks"></div>
             </section>
         </main>
     </div>
 
-    <!-- Scripts -->
+    <!-- Script principal -->
     <script src="js/main.js"></script>
 </body>
 

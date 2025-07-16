@@ -1,26 +1,25 @@
 /**
  * Autor: Sergio Silva
  * Fecha de creación: 2025-07-16
- * Descripción: Archivo JavaScript principal del proyecto "kanban-simple".
- * Este archivo contendrá la lógica de arrastrar y soltar entre columnas del tablero.
+ * Descripción: Lógica principal del tablero Kanban: manejo de tareas, eventos drag & drop y persistencia local.
  *
  * Actualizaciones:
- * - [2025-07-16] Estructura base creada y listener de carga inicial agregado.
- * - [2025-07-16] Lógica inicial drag and drop implementada con listeners básicos.
- * - [2025-07-16] Agregar tareas dinámicamente al tablero.
+ * - [2025-07-16] Crear tareas dinámicamente desde input.
+ * - [2025-07-16] Arrastrar y soltar tareas entre columnas.
+ * - [2025-07-16] Eliminar tarea con doble clic.
+ * - [2025-07-16] Guardar y cargar tareas desde localStorage.
  */
 
-// Esperar a que el DOM esté completamente cargado
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("Tablero Kanban cargado correctamente.");
+  console.log("Kanban cargado correctamente.");
 
   let draggedTask = null;
 
   /**
-   * Asigna eventos de drag and drop a una tarea
+   * Asignar eventos de arrastre y eliminación a una tarea
    * @param {HTMLElement} task
    */
-  function asignarEventosDrag(task) {
+  function asignarEventos(task) {
     task.addEventListener("dragstart", () => {
       draggedTask = task;
       task.classList.add("dragging");
@@ -29,50 +28,97 @@ document.addEventListener("DOMContentLoaded", () => {
     task.addEventListener("dragend", () => {
       draggedTask = null;
       task.classList.remove("dragging");
+      guardarTareas();
+    });
+
+    task.addEventListener("dblclick", () => {
+      if (confirm("¿Eliminar esta tarea?")) {
+        task.remove();
+        guardarTareas();
+      }
     });
   }
 
-  // Asignar eventos a tareas existentes
-  document.querySelectorAll(".task").forEach(asignarEventosDrag);
-
-  // Elementos del formulario
-  const input = document.getElementById("new-task-input");
-  const addBtn = document.getElementById("add-task-btn");
-  const todoColumn = document.getElementById("todo-tasks");
+  /**
+   * Crear una tarea visualmente en una columna
+   * @param {string} texto - Contenido de la tarea
+   * @param {string} columnaID - ID de la columna de destino
+   */
+  function crearTarea(texto, columnaID) {
+    const tarea = document.createElement("div");
+    tarea.classList.add("task");
+    tarea.setAttribute("draggable", "true");
+    tarea.textContent = texto;
+    asignarEventos(tarea);
+    document.getElementById(columnaID).appendChild(tarea);
+  }
 
   /**
-   * Evento: Crear nueva tarea y agregarla a la columna "Por hacer"
+   * Guardar el estado actual de las tareas en localStorage
    */
-  addBtn.addEventListener("click", () => {
-    const taskText = input.value.trim();
+  function guardarTareas() {
+    const columnas = ["todo-tasks", "in-progress-tasks", "done-tasks"];
+    const datos = {};
 
-    if (taskText !== "") {
-      const newTask = document.createElement("div");
-      newTask.classList.add("task");
-      newTask.setAttribute("draggable", "true");
-      newTask.textContent = taskText;
+    columnas.forEach((id) => {
+      const tareas = [...document.getElementById(id).querySelectorAll(".task")];
+      datos[id] = tareas.map((t) => t.textContent);
+    });
 
-      // Aplicar lógica de arrastrar
-      asignarEventosDrag(newTask);
+    localStorage.setItem("kanban-tareas", JSON.stringify(datos));
+  }
 
-      // Insertar en el tablero
-      todoColumn.appendChild(newTask);
+  /**
+   * Cargar tareas desde localStorage al iniciar
+   */
+  function cargarTareas() {
+    const guardadas = localStorage.getItem("kanban-tareas");
+    if (!guardadas) return;
+
+    const datos = JSON.parse(guardadas);
+    for (const columnaID in datos) {
+      datos[columnaID].forEach((texto) => crearTarea(texto, columnaID));
+    }
+  }
+
+  /**
+   * Inicializar drag & drop sobre columnas
+   */
+  function configurarColumnas() {
+    document.querySelectorAll(".kanban-tasks").forEach((columna) => {
+      columna.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        columna.classList.add("drag-over");
+      });
+
+      columna.addEventListener("dragleave", () => {
+        columna.classList.remove("drag-over");
+      });
+
+      columna.addEventListener("drop", () => {
+        if (draggedTask) {
+          columna.appendChild(draggedTask);
+          columna.classList.remove("drag-over");
+          guardarTareas();
+        }
+      });
+    });
+  }
+
+  /**
+   * Evento para agregar tarea nueva desde el input
+   */
+  document.getElementById("add-task-btn").addEventListener("click", () => {
+    const input = document.getElementById("new-task-input");
+    const texto = input.value.trim();
+    if (texto !== "") {
+      crearTarea(texto, "todo-tasks");
+      guardarTareas();
       input.value = "";
     }
   });
 
-  // Columnas del tablero
-  const columns = document.querySelectorAll(".kanban-tasks");
-
-  columns.forEach((column) => {
-    column.addEventListener("dragover", (e) => {
-      e.preventDefault();
-    });
-
-    column.addEventListener("drop", () => {
-      if (draggedTask) {
-        column.appendChild(draggedTask);
-      }
-    });
-  });
+  // Inicializar
+  configurarColumnas();
+  cargarTareas();
 });
