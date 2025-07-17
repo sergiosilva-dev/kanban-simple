@@ -53,3 +53,11 @@ Este documento sigue el formato de [Keep a Changelog](https://keepachangelog.com
 - Funcionalidad para importar tareas desde archivo JSON.
 - Nuevos estilos para sección de filtros y herramientas (`style.css`).
 - Elementos visuales en `index.html` para exportar/importar y filtrar.
+- Icono Font Awesome para alternar tema claro/oscuro.
+- Estilos con variables CSS para compatibilidad entre temas.
+- Funcionalidad para descargar las tareas guardadas en localStorage como archivo JSON manual.
+
+### 🛠️ Ajustado
+
+- HTML estructurado con `data-theme="..."` y `fa-sun` / `fa-moon` dinámico.
+- Control de tema persistente y visualmente accesible.

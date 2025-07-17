@@ -220,6 +220,48 @@ document.addEventListener("DOMContentLoaded", () => {
     e.target.value = ""; // Reset para permitir subir mismo archivo si se desea
   });
 
+  /**
+   * Cambio de tema claro/oscuro con Font Awesome
+   */
+  const themeToggleBtn = document.getElementById("theme-toggle-btn");
+  const html = document.documentElement;
+
+  const savedTheme = localStorage.getItem("kanban-theme") || "dark";
+  html.setAttribute("data-theme", savedTheme);
+  actualizarIconoTema(savedTheme);
+
+  themeToggleBtn.addEventListener("click", () => {
+    const nuevoTema =
+      html.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    html.setAttribute("data-theme", nuevoTema);
+    localStorage.setItem("kanban-theme", nuevoTema);
+    actualizarIconoTema(nuevoTema);
+  });
+
+  function actualizarIconoTema(tema) {
+    const icono = themeToggleBtn.querySelector("i");
+    icono.className = tema === "light" ? "fas fa-sun" : "fas fa-moon";
+  }
+
+  /**
+   * Descargar tareas como archivo .json
+   */
+  document.getElementById("download-json").addEventListener("click", () => {
+    const datos = localStorage.getItem("kanban-tareas");
+    if (!datos) return;
+
+    const blob = new Blob([datos], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "kanban-backup.json";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  });
+
   // Inicialización
   configurarColumnas();
   cargarTareas();

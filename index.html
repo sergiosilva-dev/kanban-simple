@@ -10,11 +10,12 @@
   - [2025-07-16] Mejora de identación, estructura visual y legibilidad
   - [2025-07-16] Se añade soporte para guardar y recuperar tareas desde localStorage.
   - [2025-07-16] Se añadió campo de búsqueda de tareas.
-  - [2025-07-16] Se implementa campos para filtros y exportación/importación.
+  - [2025-07-17] Se implementa campos para filtros y exportación/importación.
+  - [2025-07-17] Se agrega link a FontAwesome y cambiar tema claro/oscuro.
 -->
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 
 <head>
     <meta charset="UTF-8" />
@@ -32,6 +33,10 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png" />
     <link rel="manifest" href="site.webmanifest" />
+
+    <!-- Iconos Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -45,6 +50,10 @@
 
         <!-- Filtros y exportación/importación -->
         <section class="task-utils">
+            <label class="theme-toggle" id="theme-toggle-btn" title="Cambiar tema">
+                <i class="fas fa-moon"></i>
+            </label>
+
             <select id="filter-column">
                 <option value="todas">Todas las columnas</option>
                 <option value="todo">Por hacer</option>
@@ -55,6 +64,7 @@
             <button id="export-json">Exportar JSON</button>
             <label for="import-json" class="import-label">Importar JSON</label>
             <input type="file" id="import-json" accept=".json" hidden>
+            <button id="download-json">Descargar JSON</button>
         </section>
 
         <!-- Tablero principal -->
