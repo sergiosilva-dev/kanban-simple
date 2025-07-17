@@ -56,8 +56,13 @@ Este documento sigue el formato de [Keep a Changelog](https://keepachangelog.com
 - Icono Font Awesome para alternar tema claro/oscuro.
 - Estilos con variables CSS para compatibilidad entre temas.
 - Funcionalidad para descargar las tareas guardadas en localStorage como archivo JSON manual.
+- Etiquetas meta para SEO: descripción, autor, keywords, robots, canonical.
+- Etiquetas Open Graph para compartir en redes sociales.
+- Etiquetas Twitter Card para vista previa en redes sociales.
 
 ### 🛠️ Ajustado
 
 - HTML estructurado con `data-theme="..."` y `fa-sun` / `fa-moon` dinámico.
 - Control de tema persistente y visualmente accesible.
+- Actualización del `<title>` de la página para reflejar propósito del proyecto.
+- Comentario actualizado en `index.html` con detalles de SEO.

@@ -12,31 +12,71 @@
   - [2025-07-16] Se añadió campo de búsqueda de tareas.
   - [2025-07-17] Se implementa campos para filtros y exportación/importación.
   - [2025-07-17] Se agrega link a FontAwesome y cambiar tema claro/oscuro.
+  - [2025-07-17] Se optimiza SEO con metaetiquetas y Open Graph.
 -->
 
 <!DOCTYPE html>
 <html lang="es" data-theme="dark">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Codificación de caracteres -->
+  <meta charset="UTF-8" />
 
-    <!-- Título de la página -->
-    <title>Tablero Kanban Simple</title>
+  <!-- Responsividad en móviles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Enlace a hoja de estilos -->
-    <link rel="stylesheet" href="css/style.css" />
+  <!-- Compatibilidad con versiones antiguas de Internet Explorer -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- Favicon e íconos -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png" />
-    <link rel="manifest" href="site.webmanifest" />
+  <!-- Título del sitio (SEO y navegador) -->
+  <title>Kanban Simple | Organiza tus tareas visualmente</title>
 
-    <!-- Iconos Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Descripción para buscadores y redes sociales -->
+  <meta name="description" content="Tablero Kanban simple para organizar tus tareas de forma visual y dinámica. Crea, edita, mueve y guarda tareas con facilidad." />
+
+  <!-- Palabras clave para buscadores -->
+  <meta name="keywords" content="kanban, tareas, organización, productividad, JavaScript, gestor de tareas, Up Develop" />
+
+  <!-- Autor del proyecto -->
+  <meta name="author" content="Sergio Silva" />
+
+  <!-- Permitir que los robots indexen esta página -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- URL principal del sitio (útil para SEO si se publica) -->
+  <link rel="canonical" href="https://sergiosilva-dev.github.io.com/kanban-simple" />
+
+  <!-- Open Graph para Facebook, LinkedIn y WhatsApp -->
+  <meta property="og:title" content="Kanban Simple | Organiza tus tareas visualmente" />
+  <meta property="og:description" content="Tablero Kanban simple para organizar tus tareas de forma visual." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sergiosilva-dev.github.io/kanban-simple" />
+  <meta property="og:image" content="https://sergiosilva-dev.github.io/assets/img/preview.png" />
+
+  <!-- Twitter Card para vista previa en redes -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kanban Simple | Organiza tus tareas visualmente" />
+  <meta name="twitter:description" content="Tablero Kanban para gestionar tus tareas de forma sencilla." />
+  <meta name="twitter:image" content="https://sergiosilva-dev.github.io/assets/img/preview.png" />
+  
+  <!-- Verificación de Google Search Console -->
+  <meta name="google-site-verification" content="j51wvRIaBBaXhYt5M8rYeLHMZdo9IGGVXmqrPitv4rI" />
+
+  <!-- Enlace a la hoja de estilos principal -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Favicon e íconos para navegadores y dispositivos -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <!-- Font Awesome para íconos visuales -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..."
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
 </head>
 
 <body>
