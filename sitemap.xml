@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Autor: Sergio Silva
+  Fecha: 2025-07-17
+  Descripción: Mapa del sitio para Kanban Simple.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://sergiosilva-dev.github.io.com/kanban-simple</loc>
+        <lastmod>2025-07-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+</urlset>

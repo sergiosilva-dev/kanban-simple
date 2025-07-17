@@ -1,0 +1,9 @@
+# Autor: Sergio Silva
+# Fecha: 2025-07-17
+# Descripción: Permite que los motores de búsqueda indexen todo el sitio y encuentren el sitemap
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://sergiosilva-dev.github.io.com/kanban-simple/sitemap.xml
