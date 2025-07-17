@@ -43,3 +43,13 @@ Este documento sigue el formato de [Keep a Changelog](https://keepachangelog.com
 - `README.md`: añadidas secciones de uso, autor y licencia.
 - `index.html`: se agregaron enlaces a favicons y manifest para compatibilidad con PWA.
 - Comentarios actualizados en la sección de documentación del archivo.
+
+## [2025-07-17]
+
+### ✨ Integrado
+
+- Funcionalidad para filtrar tareas por columna seleccionada.
+- Botón de exportación para guardar tareas en formato JSON.
+- Funcionalidad para importar tareas desde archivo JSON.
+- Nuevos estilos para sección de filtros y herramientas (`style.css`).
+- Elementos visuales en `index.html` para exportar/importar y filtrar.

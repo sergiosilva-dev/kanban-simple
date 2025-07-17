@@ -10,6 +10,7 @@
   - [2025-07-16] Mejora de identación, estructura visual y legibilidad
   - [2025-07-16] Se añade soporte para guardar y recuperar tareas desde localStorage.
   - [2025-07-16] Se añadió campo de búsqueda de tareas.
+  - [2025-07-16] Se implementa campos para filtros y exportación/importación.
 -->
 
 <!DOCTYPE html>
@@ -42,22 +43,36 @@
             <button id="add-task-btn" aria-label="Agregar tarea">Agregar</button>
         </section>
 
+        <!-- Filtros y exportación/importación -->
+        <section class="task-utils">
+            <select id="filter-column">
+                <option value="todas">Todas las columnas</option>
+                <option value="todo">Por hacer</option>
+                <option value="in-progress">En progreso</option>
+                <option value="done">Completado</option>
+            </select>
+
+            <button id="export-json">Exportar JSON</button>
+            <label for="import-json" class="import-label">Importar JSON</label>
+            <input type="file" id="import-json" accept=".json" hidden>
+        </section>
+
         <!-- Tablero principal -->
         <main class="kanban-board">
             <!-- Columna: Por hacer -->
-            <section class="kanban-column">
+            <section class="kanban-column" id="todo">
                 <h2>Por hacer</h2>
                 <div class="kanban-tasks" id="todo-tasks"></div>
             </section>
 
             <!-- Columna: En progreso -->
-            <section class="kanban-column">
+            <section class="kanban-column" id="in-progress">
                 <h2>En progreso</h2>
                 <div class="kanban-tasks" id="in-progress-tasks"></div>
             </section>
 
             <!-- Columna: Completado -->
-            <section class="kanban-column">
+            <section class="kanban-column" id="done">
                 <h2>Completado</h2>
                 <div class="kanban-tasks" id="done-tasks"></div>
             </section>

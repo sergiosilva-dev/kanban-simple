@@ -10,6 +10,9 @@
  * - [2025-07-16] Guardar y cargar tareas desde localStorage.
  * - [2025-07-16] Se implementa lógica para edición de tareas (ALT + doble clic).
  * - [2025-07-16] Se agrega lógica para buscar tareas en tiempo real.
+ * - [2025-07-17] Funcionalidad para filtrar tareas por columna seleccionada.
+ * - [2025-07-17] Funcionalidad para exportar tareas a archivo JSON.
+ * - [2025-07-17] Funcionalidad para importar tareas desde archivo JSON.
  */
 
 // Asegurarse de que el DOM esté completamente cargado antes de ejecutar el script
@@ -150,6 +153,72 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  /**
+   * Exportar tareas en formato JSON
+   */
+  function exportarTareas() {
+    const datos = localStorage.getItem("kanban-tareas");
+    if (!datos) return;
+
+    const blob = new Blob([datos], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+
+    const enlace = document.createElement("a");
+    enlace.href = url;
+    enlace.download = "kanban-tareas.json";
+    document.body.appendChild(enlace);
+    enlace.click();
+    document.body.removeChild(enlace);
+    URL.revokeObjectURL(url);
+  }
+
+  /**
+   * Importar tareas desde un archivo JSON
+   */
+  function importarTareas(archivo) {
+    const lector = new FileReader();
+    lector.onload = (e) => {
+      try {
+        const datos = JSON.parse(e.target.result);
+        localStorage.setItem("kanban-tareas", JSON.stringify(datos));
+        location.reload(); // Recargar para aplicar cambios
+      } catch (error) {
+        alert("Archivo inválido o dañado.");
+      }
+    };
+    lector.readAsText(archivo);
+  }
+
+  /**
+   * Filtrar tareas por columna
+   */
+  const filtroColumna = document.getElementById("filter-column");
+  if (filtroColumna) {
+    filtroColumna.addEventListener("change", () => {
+      const columnaSeleccionada = filtroColumna.value;
+
+      document.querySelectorAll(".kanban-column").forEach((columna) => {
+        if (
+          columnaSeleccionada === "todas" ||
+          columna.id === columnaSeleccionada
+        ) {
+          columna.style.display = "block";
+        } else {
+          columna.style.display = "none";
+        }
+      });
+    });
+  }
+
+  // Eventos para exportar e importar
+  document
+    .getElementById("export-json")
+    .addEventListener("click", exportarTareas);
+  document.getElementById("import-json").addEventListener("change", (e) => {
+    importarTareas(e.target.files[0]);
+    e.target.value = ""; // Reset para permitir subir mismo archivo si se desea
+  });
 
   // Inicialización
   configurarColumnas();
