@@ -33,6 +33,10 @@ Este documento sigue el formato de [Keep a Changelog](https://keepachangelog.com
 - Función `guardarTareas()` que guarda el estado del tablero automáticamente.
 - Función `cargarTareas()` que restaura tareas guardadas al cargar la app.
 - Función `crearTarea()` centralizada para tareas nuevas o recuperadas.
+- Campo de búsqueda de tareas en `index.html`.
+- Estilos para input de búsqueda en `style.css`.
+- Lógica en `main.js` para buscar tareas mientras se escribe.
+- Edición de tareas con ALT + doble clic (prompt editable).
 
 ### 📝 Actualizado
 

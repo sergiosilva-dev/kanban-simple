@@ -9,6 +9,7 @@
   - [2025-07-16] Se agrega tareas dinámicamente desde un input
   - [2025-07-16] Mejora de identación, estructura visual y legibilidad
   - [2025-07-16] Se añade soporte para guardar y recuperar tareas desde localStorage.
+  - [2025-07-16] Se añadió campo de búsqueda de tareas.
 -->
 
 <!DOCTYPE html>
@@ -36,6 +37,7 @@
     <div class="kanban-container">
         <!-- Formulario de ingreso de tareas -->
         <section class="task-form">
+            <input type="text" id="task-search" placeholder="Buscar tareas..." />
             <input type="text" id="new-task-input" placeholder="Escribe una nueva tarea..." aria-label="Nueva tarea" />
             <button id="add-task-btn" aria-label="Agregar tarea">Agregar</button>
         </section>
